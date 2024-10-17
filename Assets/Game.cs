@@ -1,18 +1,11 @@
 public class Game
 {
-    private Bootstrapper bootstrapper;
-
-    public Game(Score score)
-    {
-        this.bootstrapper.score = score;
-    }
-
-    public void StartGame()
+    public void StartGame(Bootstrapper bootstrapper)
     {
         bootstrapper.score.CurrentScore = 5;
     }
 
-    public void EndGame()
+    public void EndGame(Bootstrapper bootstrapper)
     {
         bootstrapper.score.CurrentScore = 0;
     }

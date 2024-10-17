@@ -11,7 +11,7 @@ public class Bootstrapper : MonoBehaviour
     void Awake()
     {
         score = new Score();
-        game = new Game(score);
+        game = new Game();
         inputListener = gameObject.AddComponent<InputListener>();
         clickableObject = FindObjectOfType<ClickableObject>();
         scoreDisplay = FindObjectOfType<ScoreDisplay>();
@@ -19,9 +19,6 @@ public class Bootstrapper : MonoBehaviour
 
     void Start()
     {
-        game.StartGame();
-        inputListener.Initialize(game);
-        clickableObject.Initialize(score);
-        scoreDisplay.Initialize(score);
+        game.StartGame(this);
     }
 }

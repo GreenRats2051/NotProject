@@ -5,17 +5,13 @@ public class ScoreDisplay : MonoBehaviour
 {
     [SerializeField]
     private Text scoreText;
+    [SerializeField]
     private Bootstrapper bootstrapper;
 
     private void Start()
     {
         scoreText.text = "Score: " + bootstrapper.score.CurrentScore;
         bootstrapper.score.OnScoreChanged += UpdateScoreText;
-    }
-
-    public void Initialize(Score score)
-    {
-        this.bootstrapper.score = score;
     }
 
     private void UpdateScoreText()
